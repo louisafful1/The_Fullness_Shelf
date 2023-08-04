@@ -49,8 +49,5 @@ require 'include/admin-navbar.php';
 
 &nbsp;&nbsp;<input type="submit" name="submit"><br>
 </div>
-
-
-
 </body>
 </html>
