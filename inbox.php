@@ -1,5 +1,5 @@
 <?php
-include 'session.php';
+include 'include/session.php';
 include "include/database.php";
   $user_id = $_SESSION['user_id'];
 $select = mysqli_query($connection, "SELECT * FROM orders WHERE user_id ='$user_id' and status ='confirmed' ORDER BY order_date;") or die("Query Failed");
