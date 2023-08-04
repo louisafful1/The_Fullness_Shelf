@@ -1,0 +1,47 @@
+
+		form{
+			border:2px;
+			background: orange;
+	        margin: 4% 30%; 
+         	padding: 10px;
+            border-radius: 5px; 
+        	font-family: sans-serif; 
+        	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	        font-size: 20px;
+
+	}
+
+				select{
+		width: 51%;
+			height: 35px;
+			margin-left: 23%;
+			border-radius: 5px;
+			border-color: orange;
+		}
+
+		label{
+			margin-left: 23%;
+
+		}
+
+		.input{
+			width: 50%;
+			height: 25px;
+			border-radius: 5px;
+			border-color: orange;
+			margin-left: 23%;
+			margin-bottom: 7px;
+
+		}
+
+
+		.place-order{
+       margin: 8px 40%;
+       background: blue;
+       padding: 15px;
+       border:none;
+       text-align: center;
+       border-radius: 8px;
+       cursor: pointer;
+
+		}

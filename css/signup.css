@@ -1,0 +1,52 @@
+
+           h1{
+           	margin-top: 2px;
+           }
+
+
+		form{
+			margin-left:400px; 
+			width: 30%;
+			border:1px solid black;
+			background: orange;
+            margin-top: 20px;
+         	padding: 30px;
+            border-radius: 5px; 
+        	font-family: sans-serif; 
+        	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	        font-size: 20px;
+
+	}
+
+
+		label{
+			margin-left: 18%;
+
+		}
+
+		.input{
+			width: 70%;
+			height: 30px;
+			border-radius: 5px;
+			border-color: orange;
+			margin-left: 18%;
+			margin-bottom: 3px;
+
+		}
+
+
+		.register{
+			width: 35%;
+            margin: 8px 35%;
+            background: black;
+            padding: 15px;
+            border:none;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+		}
+
+		p a{
+			text-decoration: none;
+		}

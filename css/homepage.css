@@ -1,0 +1,89 @@
+
+.item-count{
+ color: white; 
+ position: relative;
+ right: 8px; 
+ font-size: 20px; 
+ bottom: 6px;"
+}
+marquee{
+  height: 35px;
+  color: white;
+  margin-bottom: 2px;
+
+}
+
+.main-container{
+
+   display: flex;
+   flex-wrap: wrap; /*pulls some divs down*/
+   gap:15px;
+   justify-content: center;
+}
+
+.main-container .display-form{
+text-align: center;
+border-radius: 5px;
+position: relative;
+border:1px solid black;
+position: relative;
+padding: 20px;
+width: 340px;
+
+}
+
+img{
+  width: 230px;
+  height: 48vh;
+  margin-top: 5%;
+}
+
+
+.display-container{
+
+/*  width: 340px;
+  height:75vh;
+  border:1px solid black;
+  margin: 15px;
+  text-align:   center;
+  border-radius: 10px;*/
+}
+
+.name{
+margin-bottom: 0px;
+font-size: 20px;
+padding: 5px 0;
+}
+
+.discount{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: orange;
+  font-size: 25px;
+}
+.qty{
+  width: 85%;
+  height: 40px;
+  border:2px solid black;
+  border-radius: 8px;
+ font-size: 20px;
+ text-align: center;
+}
+.btn{
+  margin-top: 5%;
+  border: 1px solid blue;
+}
+
+.load-more{
+  margin-top: 0;
+  margin-bottom: 10px;
+ margin-left: 48%;
+}
+
+button a{
+  text-decoration: none;
+  color: white;
+}

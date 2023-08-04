@@ -1,0 +1,62 @@
+      body{
+  margin-top: 70px;
+  
+}
+marquee{
+  height: 35px;
+  color: white;
+}
+
+.main-container{
+
+   display: flex;
+   flex-wrap: wrap; /*pulls some divs down*/
+   gap:15px;
+   justify-content: center;
+}
+
+.main-container .display-form{
+text-align: center;
+border-radius: 5px;
+position: relative;
+border:1px solid black;
+position: relative;
+padding: 20px;
+width: 340px;
+
+}
+
+img{
+  width: 230px;
+  height: 48vh;
+  margin-top: 5%;
+}
+
+
+.item_name{
+margin-bottom: 0px;
+font-size: 20px;
+padding: 5px 0;
+}
+
+.discount{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: orange;
+  font-size: 25px;
+}
+.quantity{
+  width: 85%;
+  height: 40px;
+  border:2px solid black;
+  border-radius: 8px;
+ font-size: 20px;
+ text-align: center;
+}
+.btn{
+  margin-top: 5%;
+  border: 1px solid blue;
+}
