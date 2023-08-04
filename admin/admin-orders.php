@@ -1,7 +1,5 @@
 <?php
 
-// require("include/admin-session.php");
-// require 'alert_message.php';
 include("include/database.php");
 
 if(isset($_POST['confirm'])){
@@ -21,67 +19,9 @@ $id =  $_POST['hidden'];
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-		
-	<style type="text/css">
+	<title>Admin Orders</title>
+	<link rel="stylesheet" type="text/css" href="css/admin-orders.css">	
 
-	.main-container{
-
-   display: flex;
-   flex-wrap: wrap; /*pulls some divs down*/
-   gap:10px;
-	}
-
-	#admin-orders{
-	border:2px solid black;
-	padding: 20px;	
-	/*display: flex;*/
-	flex-wrap: wrap;
-	/*gap:8px;*/
-	margin-top: 30px;
-	padding-left: 1rem;
-	width: 25%;
-	font-size: 1rem;
-	border-radius: 4px;
-}
-
-		img{
-			width: 100px;
-			height: 100px;
-		}
-
-   .button{
-   	background-color: blue;
-   	padding: 10px;
-   	border-radius: 4px;
-   	border:white;
-   	color: white;
-   }
-
-    .empty{
-       width: 40%;
-       margin: 0 15%; 
-       border-radius: 7px;
-       text-align: center;
-       font-size: 2rem;
-       font-family: sans-serif;
-       background: blue;
-       color: white;
-       margin-top: 20%;
-       margin-left: 25%; 
-       padding: 50px;
-    }
-
-    select{
-    	width: 150px;
-    	height: 30px;
-    	margin-top: 2%;
-    	border:double;
-    	border-radius: 5px;
-    	font-size: 1.1rem;
-    }
-
-	</style>
 </head>
 <body>
 
@@ -92,7 +32,6 @@ $id =  $_POST['hidden'];
 $sel = mysqli_query($connection, "SELECT * FROM orders WHERE status='pending';");
 if(mysqli_num_rows($sel) >0){
 while($array = mysqli_fetch_array($sel)){
-
 
 
 ?>
