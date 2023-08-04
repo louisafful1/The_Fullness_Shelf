@@ -24,27 +24,12 @@ if($arr > 0){
 
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Admin Login</title>
 
-	<style type="text/css">
-		form{
-			margin-top: 120px; 
-			margin-left:500px; 
-			width: 25%;
-			border: 2px solid black;
-		}
 
-		.adjust{
-			margin-left: 20px;
-		}
-	</style>
 </head>
 <body>
 
