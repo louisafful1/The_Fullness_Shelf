@@ -1,5 +1,6 @@
 <?php
 include "include/database.php";
+require "include/admin-navbar.html";
 if(
 // if(isset($_POST['title']) and isset($_POST['author']) and isset($_POST['quantity']) and isset($_POST['unit']) and isset($_POST['total']) and isset($_POST['image']) and 
 isset($_POST['add-item'])){
@@ -7,6 +8,7 @@ isset($_POST['add-item'])){
 	$title =mysqli_real_escape_string($connection, $_POST['title']);
 	$author =strtoupper($_POST['author']);
 	$quantity = $_POST['quantity'];
+	$discount = $_POST['discount'];
 	$unit =$_POST['unit'];
 	$image =$_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
@@ -23,7 +25,7 @@ $total = $quantity * $unit;
 		$message[] = 'Sorry, This Book already exists!';
 	} else{
 
-		$insert = mysqli_query($connection, "INSERT INTO products VALUES(DEFAULT, '$title', '$author', '$quantity', '$unit', '$total', '$image')") or die("query failed");
+		$insert = mysqli_query($connection, "INSERT INTO products VALUES(DEFAULT, '$title', '$author', '$quantity', '$discount', '$unit', '$total', '$image')") or die("query failed");
 
 
 		if($insert){
@@ -59,16 +61,19 @@ if(isset($message)){
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style type="text/css">
+	<title>Add Stock</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+     <link rel="stylesheet" href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css'> 
+<style type="text/css">
 
 		            body{
   margin-top: 90px;
 
 }
-		
+	<link rel="stylesheet" href	
 
-		#add-item{
+#add-item{
 
   border: 2px solid black;
   /*margin-top: 40px;*/
@@ -77,7 +82,7 @@ if(isset($message)){
 }
 
 table{
-	width: 90%;
+	width: 100%;
 	border-collapse: collapse;
 	margin-left: 5%;
 }
@@ -98,24 +103,40 @@ td{
 
 
 <div id="add-item">
-<form method="post" enctype="multipart/form-data">	
-&nbsp;&nbsp;<label>Title</label><br>
-&nbsp;&nbsp;<input type="text" name="title" required><br>
+<form method="post" enctype="multipart/form-data" class="container">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" class="form-control" required>
+  </div>
 
-&nbsp;&nbsp;<label>Author</label><br>
-&nbsp;&nbsp;<input type="text" name="author"><br>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" name="author" id="author" class="form-control">
+  </div>
 
-&nbsp;&nbsp;<label>Quantity</label><br>
-&nbsp;&nbsp;<input type="number" name="quantity" required><br>
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" id="quantity" class="form-control" required>
+  </div>
 
-&nbsp;&nbsp;<label>Unit Price</label><br>
-&nbsp;&nbsp;<input type="number" name="unit" required><br>
+  <div class="form-group">
+    <label for="unit">Unit Price</label>
+    <input type="number" name="unit" id="unit" class="form-control" required>
+  </div>
 
-&nbsp;&nbsp;<label>Image</label><br>
-&nbsp;&nbsp;<input type="file" name="image" accept="image/jpg, image/jpeg, image/png"><br><br>
+  <div class="form-group">
+    <label for="discount">Discount</label>
+    <input type="number" name="discount" id="discount" class="form-control" required>
+  </div>
 
-&nbsp;&nbsp;<input type="submit" name="add-item"><br>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image" class="form-control-file" accept="image/jpg, image/jpeg, image/png">
+  </div>
+
+  <input type="submit" name="add-item" value="Submit" class="btn btn-primary">
 </form>
+
 </div>
 
 
@@ -127,15 +148,17 @@ $select =mysqli_query($connection, "SELECT * FROM products ORDER BY title");
 // $row = mysqli_fetch_row($select);
 
 $i=1;
-echo "<table border='2' > 
+echo "<table border='0'> 
 <tr>
     <th>S/N</th>
-	<th>Title</th>
-	<th>Author</th>
-    <th>Quantity</th>
-    <th>Unit Price</th>
-    <th>Total Price</th>
-    <th>Image</th>
+	<th style='text-align: center;'>Title</th>
+	<th style='text-align: center;'>Author</th>
+    <th style='text-align: center;'>Quantity</th>
+    <th style='text-align: center;'>Unit Price</th>
+    <th style='text-align: center;'>Total Price</th>
+	<th style='text-align: center;'>Discount</th>
+    <th style='text-align: center;'>Image</th>
+
 
 </tr>";
 
@@ -144,14 +167,22 @@ while ($row=mysqli_fetch_row($select)) {
 	# code...
 
 echo "<tr>
-	<td>".$i++."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td></tr>";
+	<td>".$i++."</td>
+	<td>".$row[1]."</td>
+	<td>".$row[2]."</td>
+	<td>".$row[3]."</td>
+	<td>".$row[5]."</td>
+	<td>".$row[6]."</td>
+	<td>".$row[4]."</td>
+	<td>".$row[7]."</td>
+	</tr>";
 
 }
-
 echo "</table>";
 }
 
 ?>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 	<script type="text/javascript" src="index.js"></script>
 </body>
