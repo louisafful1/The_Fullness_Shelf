@@ -75,7 +75,7 @@ while($arr = mysqli_fetch_array($pro)){
 
 ?>
 	<div id="cart_container">
-	<a href="book-details.php"><img src="admin/uploaded_img/<?php echo $fetch['image'];?>" alt="<?php echo $fetch['title']?>"></a>
+	<a href="bookDetails.php"><img src="admin/uploaded_img/<?php echo $fetch['image'];?>" alt="<?php echo $fetch['title']?>"></a>
       <div id="item_details">
 		<div class="item_title"><?php echo "<b>Title:</b> ". $fetch['title']?></div>
 		<div class="item_author"><?php echo "<b>Author:</b> ". $arr['author']?></div>

@@ -1,9 +1,7 @@
 <?php
 include "include/database.php";
 require "include/admin-navbar.html";
-if(
-// if(isset($_POST['title']) and isset($_POST['author']) and isset($_POST['quantity']) and isset($_POST['unit']) and isset($_POST['total']) and isset($_POST['image']) and 
-isset($_POST['add-item'])){
+if(isset($_POST['add-item'])){
 
 	$title =mysqli_real_escape_string($connection, $_POST['title']);
 	$author =strtoupper($_POST['author']);
